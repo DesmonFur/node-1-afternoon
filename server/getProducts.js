@@ -3,8 +3,8 @@ const products = require('../products.json')
 
 const getProducts = (req, res) => {
     const {price} = req.query
-    if(price === true){
-      let pros=  products.filter(products => products.price >= +price)[0]
+    if(price){
+      const pros =  products.filter(pro => pro.price >= +price)
         return res.status(200).send(pros)
     } else {
         
